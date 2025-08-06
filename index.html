@@ -2612,45 +2612,81 @@
         }
         
         function loginWithGoogle() {
-            alert('Google login integration would be implemented here. For demo, logging you in...');
+            // Show loading state
+            const googleBtn = event.target;
+            const originalContent = googleBtn.innerHTML;
+            googleBtn.innerHTML = '<span class="mr-2">⏳</span>Connecting...';
+            googleBtn.disabled = true;
             
-            // Simulate Google login
+            // Simulate Google OAuth flow
             setTimeout(() => {
-                isLoggedIn = true;
-                currentUser = {
-                    name: 'Google User',
-                    email: 'user@gmail.com',
-                    phone: '+91-9876543210'
+                // Simulate successful Google authentication
+                const googleUser = {
+                    name: 'Rajesh Kumar',
+                    email: 'rajesh.kumar@gmail.com',
+                    phone: '+91-9876543210',
+                    picture: '👤'
                 };
                 
+                isLoggedIn = true;
+                currentUser = googleUser;
+                
+                // Update UI elements
                 document.getElementById('auth-btn').textContent = currentUser.name;
                 document.getElementById('auth-btn').onclick = () => showScreen('profile');
                 document.getElementById('profile-btn').classList.remove('hidden');
                 
-                alert('Google login successful! Welcome to VastuGuru! 🎉');
+                // Reset button
+                googleBtn.innerHTML = originalContent;
+                googleBtn.disabled = false;
+                
+                // Show success message and redirect
+                alert('🎉 Google sign-in successful! Welcome to VastuGuru, ' + currentUser.name + '!');
                 showScreen('home');
-            }, 1000);
+                
+                // Update profile display
+                updateProfileDisplay();
+                
+            }, 2000); // 2 second delay to simulate real authentication
         }
         
         function loginWithFacebook() {
-            alert('Facebook login integration would be implemented here. For demo, logging you in...');
+            // Show loading state
+            const facebookBtn = event.target;
+            const originalContent = facebookBtn.innerHTML;
+            facebookBtn.innerHTML = '<span class="mr-2">⏳</span>Connecting...';
+            facebookBtn.disabled = true;
             
-            // Simulate Facebook login
+            // Simulate Facebook OAuth flow
             setTimeout(() => {
-                isLoggedIn = true;
-                currentUser = {
-                    name: 'Facebook User',
-                    email: 'user@facebook.com',
-                    phone: '+91-9876543210'
+                // Simulate successful Facebook authentication
+                const facebookUser = {
+                    name: 'Priya Sharma',
+                    email: 'priya.sharma@facebook.com',
+                    phone: '+91-9876543211',
+                    picture: '👤'
                 };
                 
+                isLoggedIn = true;
+                currentUser = facebookUser;
+                
+                // Update UI elements
                 document.getElementById('auth-btn').textContent = currentUser.name;
                 document.getElementById('auth-btn').onclick = () => showScreen('profile');
                 document.getElementById('profile-btn').classList.remove('hidden');
                 
-                alert('Facebook login successful! Welcome to VastuGuru! 🎉');
+                // Reset button
+                facebookBtn.innerHTML = originalContent;
+                facebookBtn.disabled = false;
+                
+                // Show success message and redirect
+                alert('🎉 Facebook sign-in successful! Welcome to VastuGuru, ' + currentUser.name + '!');
                 showScreen('home');
-            }, 1000);
+                
+                // Update profile display
+                updateProfileDisplay();
+                
+            }, 2000); // 2 second delay to simulate real authentication
         }
         
         function logout() {
@@ -2706,5 +2742,5 @@
         // Update daily tip every 30 seconds
         setInterval(updateDailyTip, 30000);
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96b0b75f55398fb2',t:'MTc1NDUwNjE4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96b0b9dd53be419e',t:'MTc1NDUwNjI5MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
